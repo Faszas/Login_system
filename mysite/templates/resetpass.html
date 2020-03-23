@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+<!-- --http://127.0.0.1:8000/ -->
+{% block title %} Reset password {% endblock title %} {% block body %}
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text " name="username" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password New</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password Confirmation</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="checkpass">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Reset</button>
+    </form>
+</div>
+
+{% if notvalid %}
+<h3 style="text-align: center;color: red;">Password have to be the same </h3>
+{% endif %} {% endblock body %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+<!-- --http://127.0.0.1:8000/ -->
+{% block title %} Content {% endblock title %} {% block body %}
+<h1 style="text-align: center;">This is content </h1>
+<div class="container">
+    {% block logout %}
+    <a class="nav-link" href="{% url 'login' %}">Logout</a> {% endblock logout %}
+</div>
+{% endblock body %}
